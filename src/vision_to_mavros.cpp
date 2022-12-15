@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 {
   ros::init(argc, argv, "vision_to_mavros");
 
-  ros::NodeHandle node;
+  ros::NodeHandle node("~");
   
   //////////////////////////////////////////////////
   // Variables for precision navigation
