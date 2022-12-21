@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     // The frame in which we find the transform into, the original "world" frame
     if(node.getParam("target_frame_id", target_frame_id))
     {
-      ROS_INFO("Get target_frame_id parameter: %s", target_frame_id.c_str());
+      ROS_WARN("Get target_frame_id parameter: %s", target_frame_id.c_str());
     }
     else
     {
@@ -50,7 +50,7 @@ int main(int argc, char** argv)
     // The frame for which we find the tranform to target_frame_id, the original "camera" frame
     if(node.getParam("source_frame_id", source_frame_id))
     {
-      ROS_INFO("Get source_frame_id parameter: %s", source_frame_id.c_str());
+      ROS_WARN("Get source_frame_id parameter: %s", source_frame_id.c_str());
     }
     else
     {
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
     // The rate at which we wish to publish final pose data
     if(node.getParam("output_rate", output_rate))
     {
-      ROS_INFO("Get output_rate parameter: %f", output_rate);
+      ROS_WARN("Get output_rate parameter: %f", output_rate);
     }
     else
     {
@@ -71,7 +71,7 @@ int main(int argc, char** argv)
     // In this case, target world frame has y forward, x to the right and z upwards (ENU as ROS dictates)
     if(node.getParam("gamma_world", gamma_world))
     {
-      ROS_INFO("Get gamma_world parameter: %f", gamma_world);
+      ROS_WARN("Get gamma_world parameter: %f", gamma_world);
     }
     else
     {
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
     // The roll angle around camera's own axis to align with body frame 
     if(node.getParam("roll_cam", roll_cam))
     {
-      ROS_INFO("Get roll_cam parameter: %f", roll_cam);
+      ROS_WARN("Get roll_cam parameter: %f", roll_cam);
     }
     else
     {
@@ -91,7 +91,7 @@ int main(int argc, char** argv)
     // The pitch angle around camera's own axis to align with body frame 
     if(node.getParam("pitch_cam", pitch_cam))
     {
-      ROS_INFO("Get pitch_cam parameter: %f", pitch_cam);
+      ROS_WARN("Get pitch_cam parameter: %f", pitch_cam);
     }
     else
     {
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     // The yaw angle around camera's own axis to align with body frame 
     if(node.getParam("yaw_cam", yaw_cam))
     {
-      ROS_INFO("Get yaw_cam parameter: %f", yaw_cam);
+      ROS_WARN("Get yaw_cam parameter: %f", yaw_cam);
     }
     else
     {
@@ -122,11 +122,11 @@ int main(int argc, char** argv)
 
   if(node.getParam("enable_precland", enable_precland))
   {
-    ROS_INFO("Precision landing: %s", enable_precland ? "enabled" : "disabled");
+    ROS_WARN("Precision landing: %s", enable_precland ? "enabled" : "disabled");
   }
   else
   {
-    ROS_INFO("Precision landing disabled by default");
+    ROS_WARN("Precision landing disabled by default");
   }
 
   if (enable_precland)
@@ -134,7 +134,7 @@ int main(int argc, char** argv)
     // The frame of the landing target in the camera frame
     if(node.getParam("precland_target_frame_id", precland_target_frame_id))
     {
-      ROS_INFO("Get precland_target_frame_id parameter: %s", precland_target_frame_id.c_str());
+      ROS_WARN("Get precland_target_frame_id parameter: %s", precland_target_frame_id.c_str());
     }
     else
     {
@@ -143,7 +143,7 @@ int main(int argc, char** argv)
 
     if(node.getParam("precland_camera_frame_id", precland_camera_frame_id))
     {
-      ROS_INFO("Get precland_camera_frame_id parameter: %s", precland_camera_frame_id.c_str());
+      ROS_WARN("Get precland_camera_frame_id parameter: %s", precland_camera_frame_id.c_str());
     }
     else
     {
@@ -267,7 +267,7 @@ int main(int argc, char** argv)
           // Publish the message
           precland_msg_publisher.publish(msg_landing_target);
 
-          ROS_INFO("Landing target detected");
+          ROS_WARN("Landing target detected");
         }
       }
     }
