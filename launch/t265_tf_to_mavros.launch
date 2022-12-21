@@ -31,6 +31,6 @@
         <param name="pitch_cam"         value="$(arg pitch_cam)" />
         <param name="yaw_cam"           value="$(arg yaw_cam)" />
         <param name="gamma_world"       value="$(arg gamma_world)" />
-        <remap from="vision_pose" to="/mavros/vision_pose/pose" />
+        <remap from="~vision_pose" to="/mavros/vision_pose/pose" />
     </node>
 </launch>
